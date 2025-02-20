@@ -1,0 +1,65 @@
+import React from "react";
+
+const ParticipantProfile = () => {
+  const participant = {
+    name: "John Doe",
+    profileImage: "https://via.placeholder.com/150",
+    upcomingMatches: [
+      { opponent: "Player A", date: "Feb 25, 2025", time: "3:00 PM" },
+      { opponent: "Player B", date: "Feb 28, 2025", time: "5:00 PM" },
+    ],
+    pastMatches: [
+      { opponent: "Player C", date: "Feb 18, 2025", result: "Won" },
+      { opponent: "Player D", date: "Feb 20, 2025", result: "Lost" },
+    ],
+  };
+
+  return (
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-md">
+      <div className="flex items-center gap-4 mb-6">
+        <img
+          src={participant.profileImage}
+          alt="Profile"
+          className="w-24 h-24 rounded-full shadow"
+        />
+        <h1 className="text-2xl font-semibold">{participant.name}</h1>
+      </div>
+
+      <div className="mb-6">
+        <h2 className="text-xl font-semibold mb-3">Upcoming Matches</h2>
+        <ul className="space-y-2">
+          {participant.upcomingMatches.map((match, index) => (
+            <li key={index} className="p-3 bg-gray-100 rounded-lg shadow">
+              {match.date} at {match.time} vs {match.opponent}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2 className="text-xl font-semibold mb-3">Past Matches</h2>
+        <ul className="space-y-2">
+          {participant.pastMatches.map((match, index) => (
+            <li
+              key={index}
+              className="p-3 bg-gray-100 rounded-lg shadow flex justify-between"
+            >
+              <span>
+                {match.date} vs {match.opponent}
+              </span>
+              <span
+                className={
+                  match.result === "Won" ? "text-green-600 font-bold" : "text-red-600 font-bold"
+                }
+              >
+                {match.result}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default ParticipantProfile;
