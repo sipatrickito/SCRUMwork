@@ -1,0 +1,41 @@
+import React, { useState } from "react";
+
+const AthleteSearchBar = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const athletes = [
+    "Kim Minji",
+    "Hanni Pham",
+    "Danielle Marsh",
+    "Kang Haerin",
+    "Lee Hyein"
+  ];
+
+  const filteredAthletes = athletes.filter((athlete) =>
+    athlete.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <div className="max-w-md mx-auto p-4 bg-white rounded-2xl shadow-md">
+      <input
+        type="text"
+        placeholder="Search for an athlete..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <ul className="mt-3 space-y-2">
+        {filteredAthletes.length > 0 ? (
+          filteredAthletes.map((athlete, index) => (
+            <li key={index} className="p-2 bg-gray-100 rounded-lg shadow">
+              {athlete}
+            </li>
+          ))
+        ) : (
+          <li className="text-gray-500">No athletes found</li>
+        )}
+      </ul>
+    </div>
+  );
+};
+
+export default AthleteSearchBar;
