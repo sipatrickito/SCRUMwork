@@ -2,7 +2,7 @@ import React from "react";
 
 const ParticipantProfile = () => {
   const participant = {
-    name: "John Doe",
+    name: "Hanni Pham",
     profileImage: "https://via.placeholder.com/150",
     upcomingMatches: [
       { opponent: "Player A", date: "Feb 25, 2025", time: "3:00 PM" },
