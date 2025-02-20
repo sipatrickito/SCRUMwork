@@ -1,0 +1,13 @@
+Tournament Formats 
+Single Elimination – Players are eliminated after one loss, with winners advancing to the next round until a champion is determined. 
+This format is fast and efficient, making it ideal for large tournaments with limited time, but it may feel unfair since a single mistake can knock a player out.
+
+Double Elimination – Players get a second chance after losing once, as they move to a separate "losers' bracket." 
+This format provides more fairness by allowing skilled players to recover from an early loss, 
+but it requires almost double the number of matches compared to Single Elimination, making it harder to schedule.
+
+Round Robin – Every participant competes against all others at least once, and the player with the best overall record wins. 
+This format ensures fairness and gives players more chances to prove their skill, but it takes much longer to complete and is best suited for small tournaments.
+
+For the project, Single Elimination is currently the most efficient choice. It’s the simplest to implement, requires fewer matches, 
+and is widely used in sports and esports tournaments. This format keeps development manageable while still providing a solid competition structure that users will recognize and understand.
